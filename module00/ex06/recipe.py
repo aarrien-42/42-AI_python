@@ -1,13 +1,14 @@
-cookbook =	{"Sandwich":{"ing":"ham, bread, cheese, tomatoes", "meal":"lunch", "time":10},
-			"Cake":{"ing":"flour, sugar, eggs", "meal":"dessert", "time":60},
-			"Salad":{"ing":"avocado, arugula, tomatoes, spinach", "meal":"lunch", "time":15}}
+cookbook =	{"sandwich":{"ing":"ham, bread, cheese, tomatoes", "meal":"lunch", "time":10},
+			"cake":{"ing":"flour, sugar, eggs", "meal":"dessert", "time":60},
+			"salad":{"ing":"avocado, arugula, tomatoes, spinach", "meal":"lunch", "time":15}}
 
 def print_names():
 	for name in cookbook.keys():
 		print(name)
 
 def print_details():
-	name = input("Please enter a recipe name to get its details:\n>> ")
+	name = input("Please enter a recipe name to get its details:\n>> ").casefold()
+	print(name)
 	if cookbook.get(name) == None:
 		return (print("Sorry, this option does not exist."))
 	print(f"\nRecipe for {name}")
@@ -16,21 +17,21 @@ def print_details():
 	print(f"	Take {cookbook[name]['time']} minutes of cooking.\n")
 
 def delete_recipe():
-	name = input("Enter the recipe you want to delete:\n>> ")
+	name = input("Enter the recipe you want to delete:\n>> ").casefold()
 	if cookbook.get(name) == None:
 		return (print("Sorry, this option does not exist."))
 	del cookbook[name]
 
 def add_recipe():
-	name = input(">>> Enter a name:\n")
+	name = input(">>> Enter a name:\n").casefold()
 	print(">>> Enter the ingredients:")
 	ing = []
 	while True:
-		ingredient = input("")
+		ingredient = input("").casefold()
 		if ingredient == "":
 			break
 		ing.append(ingredient)
-	meal = input(">>> Enter a meal type:\n")
+	meal = input(">>> Enter a meal type:\n").casefold()
 	time = input(">>> Enter a preparation time:\n")
 	cookbook[name] = {"ing":ing, "meal":meal, "time":time}
 
