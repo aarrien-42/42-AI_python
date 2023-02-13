@@ -1,4 +1,3 @@
-
 def	check_values(val):
 	if type(val) != list:
 		return print("Not a List")
@@ -39,11 +38,32 @@ def	instantiate(values):
 	inst.shape = get_shape(inst.values)
 	return inst
 
+def	size_list(num):
+	lst = []
+	for i in range(num):
+		lst.append([float(i)])
+	return lst
+
+def	range_list(min, max):
+	lst = []
+	for i in range(min, max):
+		lst.append([float(i)])
+	return lst
+
 class Vector:
-	def	__init__(self, values):
-		if check_values(values) != 0:
+	def	__init__(self, in1=None, in2=None):
+		if type(in1) == int:
+			if in2 == None:
+				in1 = size_list(in1)
+			if in2 != None and type(in2) == int:
+				if in1 > in2:
+					return print("first integer is bigger than the second")
+				in1 = range_list(in1, in2)
+			elif in2 != None and type(in2) != int:
+				return print("Second input is not an integer")
+		if check_values(in1) != 0:
 			return print("ERRROR")
-		self.values = values
+		self.values = in1
 		self.shape = get_shape(self.values)
 	def	__str__(self):
 		return "Vector(" + str(self.values) + ")"
