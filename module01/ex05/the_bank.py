@@ -107,9 +107,7 @@ class Bank():
 				return False
 			if account.name == dest and check_corrupted(account) == True:
 				return False
-		if o == 0:
-			return False
-		if d == 0:
+		if o == 0 or d == 0:
 			return False
 		if o.value < amount:
 			return False
