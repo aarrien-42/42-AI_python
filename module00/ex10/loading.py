@@ -2,7 +2,7 @@ from time import sleep
 from tqdm import tqdm
 
 def ft_progress(lst):
-	for i in tqdm(lst):
+	for i in tqdm(lst, ascii=" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>=", colour="#FF5733"):
 		yield i
 
 if __name__ == '__main__':
