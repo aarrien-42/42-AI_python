@@ -4,7 +4,11 @@ import os
 
 def write_log(action, time):
 	f = open("machine.log", "a")
-	f.write(f"({os.environ['USER']})Running: {' '.join([i.capitalize() for i in action.split('_')]).ljust(20)}[ exec-time = {time:.3f} {'ms' if time < 1.0 else 's'} ]\n")
+	f.write(f"({os.environ['USER']})Running: {' '.join([i.capitalize() for i in action.split('_')]).ljust(20)}")
+	if time < 1.0:
+		f.write(f"[ exec-time = {(time*1000):.3f} ms ]\n")
+	else:
+		f.write(f"[ exec-time = {time:.3f} s ]\n")
 	f.close()
 
 def log(f):
