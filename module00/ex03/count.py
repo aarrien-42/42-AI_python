@@ -34,7 +34,8 @@ if __name__ == "__main__":
 		while len(text) == 0:
 			text = input("What is the text to analyze?\n>> ")
 		text_analyzer(text)
-	text_analyzer(sys.argv[1:])
+	else:
+		text_analyzer(sys.argv[1:])
 
 "Python 2.0, released 2000, introduced features like List comprehensions and a garbage collection system capable of collecting reference cycles."
 

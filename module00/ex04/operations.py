@@ -17,9 +17,7 @@ print(f"Difference:	{num1-num2}")
 print(f"Product:	{num1*num2}")
 if num2 != 0:
 	print(f"Quotient:	{num1/num2}")
-else:
-	print("Quotient:	{}".format("ERROR (division by zero)"))
-if num2 != 0:
 	print(f"Remainder:	{num1%num2}")
 else:
+	print("Quotient:	{}".format("ERROR (division by zero)"))
 	print("Remainder:	{}".format("ERROR (modulo by zero)"))

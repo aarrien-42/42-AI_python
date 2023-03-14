@@ -15,10 +15,11 @@ class	Stark(GotCharacter):
 	def	die(self):
 		self.is_alive = False
 
-arya = Stark("Arya")
-arya.print_house_words()
-print(arya.is_alive)
-arya.die()
-print(arya.is_alive)
-print(dict(arya.__dict__))
-print(arya.__doc__)
+if __name__ == '__main__':
+	arya = Stark("Arya")
+	arya.print_house_words()
+	print(arya.is_alive)
+	arya.die()
+	print(arya.is_alive)
+	print(dict(arya.__dict__))
+	print(arya.__doc__)

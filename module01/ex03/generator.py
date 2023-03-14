@@ -22,5 +22,5 @@ def	generator(text, sep=" ", option=None):
 	for word in text:
 		yield word
 
-for word in generator("Lorem Ipsum Lorem Ipsum", " "):
+for word in generator("Le Lorem Ipsum est simplement du faux texte.", " ", "unique"):
 	print(word)
